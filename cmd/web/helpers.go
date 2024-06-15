@@ -15,3 +15,12 @@ func (app *application) serverError(w http.ResponseWriter, r *http.Request, err 
 func (app *application) clientError(w http.ResponseWriter, r *http.Request, status int) {
 	http.Error(w, http.StatusText(status), status)
 }
+
+func (app *application) debug(message string, r *http.Request) {
+	var (
+		method = r.Method
+		uri    = r.URL.RequestURI()
+	)
+
+	app.logger.Info(message, "method", method, "uri", uri)
+}

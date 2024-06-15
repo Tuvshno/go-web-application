@@ -43,6 +43,15 @@ func (app *application) snippetCreate(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *application) snippetCreatePost(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusCreated)
-	w.Write([]byte("Saving post...\n"))
+	title := "O Snail"
+	content := "Content\n"
+	expires := 7
+
+	id, err := app.snippets.Insert(title, content, expires)
+	if err != nil {
+		app.serverError(w, r, err)
+		return
+	}
+	app.debug(fmt.Sprintf("Successfully added with id : %d", id), r)
+	http.Redirect(w, r, fmt.Sprintf("/snippet/view/%d", id), http.StatusSeeOther)
 }
