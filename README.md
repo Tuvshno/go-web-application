@@ -12,3 +12,4 @@ List of implementation details:
 - Designing and implementing SQL Database Models
 - Executing Single and Multiple-record queries 
 - Building transactions in SQL
+- Creating and caching dynamic HTML templates
