@@ -12,3 +12,4 @@ List of implementation details:
 - Designing and implementing SQL
 - Implementing Middleware for logging, authentication, and panic recovery
 - Processing Forms 
+- Managed Session Data
