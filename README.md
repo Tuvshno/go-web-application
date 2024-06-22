@@ -13,3 +13,4 @@ List of implementation details:
 - Implementing Middleware for logging, authentication, and panic recovery
 - Processing Forms 
 - Managed Session Data
+- Server Security using HTTPS and TLS
